@@ -1,0 +1,12 @@
+<%= form_for @survey do |f| %>
+
+    <p>
+      <%= f.label :Name %>   <br>
+      <%= f.text_field :name %>
+    </p>
+    <%= f.fields_for :questions do |question| %>
+        <%= render 'question', :f => question %>
+    <% end %>
+      <%= f.submit @survey.new_record? ? :"Submit" : "Update" %>
+
+<% end %>

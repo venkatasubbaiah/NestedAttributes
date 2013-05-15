@@ -1,0 +1,8 @@
+<p>
+  <%= f.label :content, "Answer" %>
+  <%= f.text_field :content %>
+  <% unless @survey.new_record? %>
+      <%= f.check_box :_destroy %>
+      <%= f.label :_destroy, "Remove" %>
+  <% end %>
+</p>
